@@ -13,20 +13,20 @@ function showLoading() {
 }
 
 function fatch(){
-      if (!search.value.trim()) {
-            Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: 'Please enter a city name!',
-            });
-            return;
-      }
-      
-      showLoading();
-      
-      axios(`https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=360fe8255eeec40c0a2efd2a73bf5742&units=metric`)
-      .then((res)=>{
-            const weather = res.data.weather[0].main.toLowerCase();
+    if (!search.value.trim()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please enter a city name!',
+        });
+        return;
+    }
+    
+    showLoading();
+    
+    axios(`https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=360fe8255eeec40c0a2efd2a73bf5742&units=metric`)
+    .then((res)=>{
+        const weather = res.data.weather[0].main.toLowerCase();
         const description = res.data.weather[0].description;
         const capitalizedDesc = description.charAt(0).toUpperCase() + description.slice(1);
         
@@ -40,9 +40,8 @@ function fatch(){
             <p>Humidity: ${res.data.main.humidity}%</p> 
             <p>Weather: ${capitalizedDesc}</p>
             <div class="weather-message">It's a ${capitalizedDesc} day! ${getWeatherEmoji(weather)}</div>
-            `;
-            
-            search.value=""
+        `;
+        
         Swal.close();
         console.log(res);
     })
