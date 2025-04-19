@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background 0.5s ease;
+    transition: background 0.5s ease, box-shadow 0.3s ease;
 }
 
 body {
@@ -12,42 +12,65 @@ body {
     justify-content: center;
     align-items: center;
     padding: 15px;
-}
-
-body.default-bg {
     background: linear-gradient(135deg, #72edf2 0%, #5151e5 100%);
 }
 
 body.clear {
-    background: linear-gradient(135deg, #87CEEB 0%, #1E90FF 100%);
+    background-image: url('https://media.istockphoto.com/id/1188187900/photo/citadel-park-green-field-with-blue-sky-in-poznan-poland.jpg?s=612x612&w=0&k=20&c=gyOVEhODiylM6xl0xIDgcXBnlAGyQkKuN6RiRnV3lU8=');
+    background-size: cover;
+    background-position: center;
 }
 
 body.clouds {
-    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%);
+    background-image: url("https://images.unsplash.com/photo-1611928482473-7b27d24eab80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNsb3VkeSUyMHNreXxlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    background-position: center;
 }
 
 body.rain {
-    background: linear-gradient(135deg, #4b79cf 0%, #283e51 100%);
+    background-image: url("https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-bdcc-61f7-af74-e85e5a5d17c4/raw?se=2025-04-19T10%3A13%3A50Z&sp=r&sv=2024-08-04&sr=b&scid=93de1615-5dcd-527f-9269-dd8f73135afa&skoid=ae70be19-8043-4428-a990-27c58b478304&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-18T19%3A25%3A04Z&ske=2025-04-19T19%3A25%3A04Z&sks=b&skv=2024-08-04&sig=W%2B6Gg/0FuPKyTBUtp6iKGXGHnlk7k7o9oBaVyHWX7ZU%3D");
+    background-size: cover;
+    background-position: center;
 }
 
 body.snow {
-    background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+    background-image: url("https://images.pexels.com/photos/31668264/pexels-photo-31668264/free-photo-of-snow-covered-mountain-landscape-under-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    background-position: center;
 }
 
 body.thunderstorm {
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    background-image: url("https://images.pexels.com/photos/1461036/pexels-photo-1461036.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    background-position: center;
 }
 
 body.drizzle {
-    background: linear-gradient(135deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
+    background-image: url("https://images.pexels.com/photos/1259231/pexels-photo-1259231.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    background-position: center;
 }
 
-body.mist, body.fog, body.haze {
-    background: linear-gradient(135deg, #606c88 0%, #3f4c6b 100%);
+body.mist {
+    background-image: url("https://plus.unsplash.com/premium_photo-1675824629278-e072280ea44f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWlzdHxlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    background-position: center;
+}
+
+body.fog {
+    background-image: url("https://plus.unsplash.com/premium_photo-1669613233557-1676c121fe73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nfGVufDB8fDB8fHww");
+    background-size: cover;
+    background-position: center;
+}
+
+body.haze {
+    background-image: url("https://plus.unsplash.com/premium_photo-1667926195926-b210e1963e2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGF6ZXxlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0);
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -55,12 +78,18 @@ body.mist, body.fog, body.haze {
     padding: 20px;
     text-align: center;
     margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
 }
 
 h1 {
-    color: #333;
+    color: #ff7f50;
     margin-bottom: 15px;
     font-size: clamp(1.5rem, 4vw, 2rem);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .search-container {
@@ -70,32 +99,35 @@ h1 {
 
 #search {
     flex: 1;
-    padding: 10px 12px;
+    padding: 12px 14px;
     border: none;
     border-radius: 30px 0 0 30px;
     font-size: clamp(14px, 3vw, 16px);
     outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f7f7f7;
+    color: #333;
 }
 
 button {
-    background-color: #5151e5;
+    background: linear-gradient(135deg, #ff7f50 0%, #ff6347 100%);
     color: white;
     border: none;
     border-radius: 0 30px 30px 0;
     padding: 0 15px;
     cursor: pointer;
     font-size: clamp(14px, 3vw, 16px);
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #3a3ac2;
+    background: linear-gradient(135deg, #ff6347 0%, #ff7f50 100%);
+    transform: scale(1.05);
 }
 
 #div {
-    background-color: rgba(81, 81, 229, 0.1);
+    background-color: rgba(255, 160, 122, 0.1);
     border-radius: 12px;
     padding: 15px;
     margin-top: 15px;
@@ -103,30 +135,31 @@ button:hover {
 }
 
 #div h1 {
-    color: #5151e5;
+    color: #ff6347;
     margin-bottom: 12px;
     text-align: center;
     font-size: clamp(1.3rem, 4vw, 1.8rem);
 }
 
 #div p {
-    background-color: white;
+    background-color: #fff;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 8px;
     font-size: clamp(14px, 3vw, 16px);
+    color: #4e4e4e;
 }
 
 .weather-message {
-    color: #333;
+    color: #4e4e4e;
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
     animation: fadeIn 1s;
     padding: 8px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     font-size: clamp(14px, 3vw, 16px);
 }
 
@@ -139,10 +172,13 @@ button:hover {
     .container {
         padding: 15px;
     }
+
     #search {
-        padding: 8px 10px;
+        padding: 10px 12px;
     }
+
     button {
         padding: 0 12px;
     }
 }
+
