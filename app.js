@@ -85,8 +85,3 @@ document.getElementById("search").addEventListener("keypress", function(event) {
         fatch();
     }
 });
-document.getElementById("search").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        fatch();
-    }
-});
