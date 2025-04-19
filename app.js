@@ -20,7 +20,7 @@ function fatch(){
             text: 'Please enter a city name!',
         });
         return;
-        
+       
     }
     
     showLoading();
@@ -62,6 +62,7 @@ function fatch(){
     });
         console.error(error);
     });
+    search.value="";
 }
 
 function getWeatherEmoji(weather) {
@@ -79,6 +80,11 @@ function getWeatherEmoji(weather) {
     return emojis[weather] || '😊';
 }
 
+document.getElementById("search").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        fatch();
+    }
+});
 document.getElementById("search").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         fatch();
