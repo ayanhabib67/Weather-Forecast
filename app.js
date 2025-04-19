@@ -20,6 +20,7 @@ function fatch(){
             text: 'Please enter a city name!',
         });
         return;
+        
     }
     
     showLoading();
@@ -30,9 +31,12 @@ function fatch(){
         const description = res.data.weather[0].description;
         const capitalizedDesc = description.charAt(0).toUpperCase() + description.slice(1);
         
-        document.body.className = '';
-        document.body.classList.add(weather);
         
+    
+    document.body.className = ""; 
+    document.body.classList.add(weather);
+         
+
         div.innerHTML = `
             <h1>${res.data.name}</h1>
             <p>Temperature: ${Math.round(res.data.main.temp)} °C</p>
@@ -41,11 +45,15 @@ function fatch(){
             <p>Weather: ${capitalizedDesc}</p>
             <div class="weather-message">It's a ${capitalizedDesc} day! ${getWeatherEmoji(weather)}</div>
         `;
+
+        const weatherImage = document.getElementById("weather-Image"); 
+
+        
         
         Swal.close();
         console.log(res);
     })
-    .catch((error) => {
+        .catch((error) => {
         Swal.fire({
             icon: 'error',
             title: 'City Not Found',
